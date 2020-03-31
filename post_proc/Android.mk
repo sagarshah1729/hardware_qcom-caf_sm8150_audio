@@ -3,7 +3,7 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS := -DLIB_AUDIO_HAL="/vendor/lib/hw/audio.primary."$(TARGET_BOARD_PLATFORM)".so"
+LOCAL_CFLAGS := -DLIB_AUDIO_HAL="/vendor/lib/hw/audio.primary."$(PRODUCT_BOARD_PLATFORM)".so"
 LOCAL_CFLAGS += -Wno-unused-variable
 LOCAL_CFLAGS += -Wno-sign-compare
 LOCAL_CFLAGS += -Wno-unused-parameter
@@ -142,11 +142,11 @@ endif
 
 ################################################################################
 
-ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike msmnile kona atoll $(MSMSTEPPE) $(TRINKET) lito,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike msmnile kona atoll $(MSMSTEPPE) $(TRINKET) lito,$(PRODUCT_BOARD_PLATFORM)),)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS := -DLIB_AUDIO_HAL="/vendor/lib/hw/audio.primary."$(TARGET_BOARD_PLATFORM)".so"
+LOCAL_CFLAGS := -DLIB_AUDIO_HAL="/vendor/lib/hw/audio.primary."$(PRODUCT_BOARD_PLATFORM)".so"
 LOCAL_CFLAGS += -Wno-unused-variable
 LOCAL_CFLAGS += -Wno-sign-compare
 LOCAL_CFLAGS += -Wno-unused-parameter
@@ -213,7 +213,7 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_MAXX_AUDIO)), true)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS := -D HAL_LIB_NAME=\"audio.primary."$(TARGET_BOARD_PLATFORM)".so\"
+LOCAL_CFLAGS := -D HAL_LIB_NAME=\"audio.primary."$(PRODUCT_BOARD_PLATFORM)".so\"
 
 LOCAL_SRC_FILES:= \
     ma_listener.c
